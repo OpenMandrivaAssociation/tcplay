@@ -1,6 +1,15 @@
-diff -up tc-play-3.3/tcplay.c.omv~ tc-play-3.3/tcplay.c
---- tc-play-3.3/tcplay.c.omv~	2021-01-30 19:59:52.446678580 +0100
-+++ tc-play-3.3/tcplay.c	2021-01-30 20:00:00.725785747 +0100
+diff -up tc-play-3.3/tcplay.c.1~ tc-play-3.3/tcplay.c
+--- tc-play-3.3/tcplay.c.1~	2020-03-02 21:16:10.000000000 +0100
++++ tc-play-3.3/tcplay.c	2021-01-30 20:17:34.399442695 +0100
+@@ -1360,7 +1360,7 @@ out:
+ 	return error;
+ }
+ 
+-#if defined(__DragonFly__)
++#if 0 //defined(__DragonFly__)
+ static
+ int
+ xlate_maj_min(const char *start_path __unused, int max_depth __unused,
 @@ -1377,7 +1377,7 @@ int
  xlate_maj_min(const char *start_path, int max_depth, char *buf, size_t bufsz,
      uint32_t maj, uint32_t min)
