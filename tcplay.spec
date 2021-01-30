@@ -12,6 +12,7 @@ License:	BSD and Public Domain
 Group:		File tools
 URL:		https://github.com/bwalex/%{uname}
 Source0:	https://github.com/bwalex/%{uname}/archive/v%{version}/%{uname}-%{version}.tar.gz
+Patch0:		tc-play-3.3-fix-build.patch
 
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(devmapper)
@@ -81,7 +82,7 @@ Libraries and includes files for developing programs based on %{name}.
 #--------------------------------------------------------------------
 
 %prep
-%autosetup -n %{uname}-%{version}
+%autosetup -p1 -n %{uname}-%{version}
 
 %build
 %cmake

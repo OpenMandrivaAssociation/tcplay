@@ -1,0 +1,12 @@
+diff -up tc-play-3.3/tcplay.c.omv~ tc-play-3.3/tcplay.c
+--- tc-play-3.3/tcplay.c.omv~	2021-01-30 19:59:52.446678580 +0100
++++ tc-play-3.3/tcplay.c	2021-01-30 20:00:00.725785747 +0100
+@@ -1377,7 +1377,7 @@ int
+ xlate_maj_min(const char *start_path, int max_depth, char *buf, size_t bufsz,
+     uint32_t maj, uint32_t min)
+ {
+-	dev_t dev = makedev(maj, min);
++	dev_t dev = gnu_dev_makedev(maj, min);
+ 	char path[PATH_MAX];
+ 	struct stat sb;
+ 	struct dirent *ent;
