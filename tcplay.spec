@@ -1,17 +1,16 @@
 %define major 3
-%define minor 3
-%define uname	tc-play
-%define libname %mklibname %{name} %{version}
+%define libname %mklibname %{name}
 %define devname %mklibname %{name} -d
+%define oldlibname %mklibname %{name} 3
 
 Summary:	A free pretty much fully featured and stable TrueCrypt implementation
 Name:		tcplay
-Version:	%{major}.%{minor}
+Version:	3.3
 Release:	2
 License:	BSD and Public Domain
 Group:		File tools
-URL:		https://github.com/bwalex/%{uname}
-Source0:	https://github.com/bwalex/%{uname}/archive/v%{version}/%{uname}-%{version}.tar.gz
+URL:		https://github.com/bwalex/tc-play
+Source0:	https://github.com/bwalex/tc-play/archive/v%{version}/tc-play-%{version}.tar.gz
 Patch0:		tc-play-3.3-fix-build.patch
 
 BuildRequires:	cmake
@@ -53,6 +52,7 @@ the trial and error approach.
 %package -n %{libname}
 Summary:	Primary library for %{name}
 Group:		System/Libraries
+Obsoletes:	%oldlibname < %{EVRD}
 
 %description -n %{libname}
 Primary library for %{name}.
@@ -82,7 +82,7 @@ Libraries and includes files for developing programs based on %{name}.
 #--------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{uname}-%{version}
+%autosetup -p1 -n tc-play-%{version}
 
 %build
 %cmake
